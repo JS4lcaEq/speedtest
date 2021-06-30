@@ -15,6 +15,9 @@
 <script>
 let canvas;
 let context;
+let start;
+let end;
+
 export default {
   name: "HelloWorld",
   props: {
@@ -25,8 +28,6 @@ export default {
       recordsCount: 50000,
       arr: [],
       debug: "",
-      start: 0,
-      end: 0,
       length: 0
     };
   },
@@ -41,7 +42,7 @@ export default {
       });
     },
     create() {
-      this.start = new Date().valueOf()
+      start = new Date().valueOf()
       let arr_ = [];
       let i = 0;
 
@@ -50,26 +51,26 @@ export default {
         arr_.push(dot);
       }
       this.arr = arr_;
-      this.end = new Date().valueOf()
-      this.length = this.end - this.start
+      end = new Date().valueOf()
+      this.length = end - start
       this.render();
     },
     sort() {
-      this.start = new Date().valueOf()
+      start = new Date().valueOf()
       this.arr.sort(function (a, b) {
         return a.dt - b.dt;
       });
-      this.end = new Date().valueOf()
-      this.length = this.end - this.start
+      end = new Date().valueOf()
+      this.length = end - start
       this.render();
     },
     unSort() {
-      this.start = new Date().valueOf()
+      start = new Date().valueOf()
       this.arr.sort(function (a, b) {
         return a.id - b.id;
       });
-      this.end = new Date().valueOf()
-      this.length = this.end - this.start
+      end = new Date().valueOf()
+      this.length = end - start
       this.render();
     },
   },
