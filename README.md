@@ -1,5 +1,9 @@
 # speedtest
 
+## Demo
+
+See [demo](https://js4lcaeq.github.io/speedtest/)
+
 ## Project setup
 ```
 npm install
